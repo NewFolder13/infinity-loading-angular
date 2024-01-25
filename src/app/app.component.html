@@ -1,0 +1,10 @@
+<main>
+  <div class="container py-5">
+    <div class="row g-5">
+      <div class="col-12 col-md-6 col-lg-4" *ngFor="let post of posts">
+        <app-post [uid]="post" (holdMe)="holdPost($event)" (destroyMe)="destroyPost($event)"/>
+      </div>
+    </div>
+  </div>
+  <app-load-more-trigger (triggered)="loadMorePost($event)"/>
+</main>
